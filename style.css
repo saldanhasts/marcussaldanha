@@ -730,6 +730,16 @@
       color: transparent;
     }
 
+    .num-text {
+      font-family: 'Clash Display', sans-serif;
+      font-size: clamp(2rem, 3.6vw, 2.7rem);
+      font-weight: 600;
+      background: var(--grad-beam);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
     .stat .lbl {
       margin-top: 8px;
       color: var(--text-mute);
@@ -1365,6 +1375,10 @@
    RESPONSIVE
 =============================================================== */
     @media (max-width:1080px) {
+      html {
+        zoom: 87% !important;
+      }
+
       .services-grid {
         grid-template-columns: 1fr;
       }
