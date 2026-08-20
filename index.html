@@ -674,6 +674,50 @@
 
   <script src="script.js"></script>
 
+  <script>
+    (() => {
+      const section = document.querySelector("#services");
+
+      if (!section) return;
+
+      let ticking = false;
+
+      function parallax() {
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        const progress =
+          (viewportHeight - rect.top) /
+          (viewportHeight + rect.height);
+
+        const movement =
+          (progress - 0.5) * -100;
+
+        section.style.setProperty(
+          "--parallax-y",
+          `${movement}px`
+        );
+
+        ticking = false;
+      }
+
+      function requestParallax() {
+        if (!ticking) {
+          requestAnimationFrame(parallax);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener(
+        "scroll",
+        requestParallax,
+        { passive: true }
+      );
+
+      parallax();
+    })();
+  </script>
+
 </body>
 
 </html>
