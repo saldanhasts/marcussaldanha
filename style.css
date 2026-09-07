@@ -931,10 +931,6 @@
       overflow: hidden;
     }
 
-    .svc-card:nth-child(2) {
-      transform: translateY(22px);
-    }
-
     .svc-card::before {
       content: '';
       position: absolute;
