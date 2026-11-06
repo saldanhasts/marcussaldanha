@@ -228,6 +228,22 @@ p {
   background: var(--line)
 }
 
+.layer.l-c1 {
+    display: none !important;
+}
+
+span.status.in {
+    display: none !important;
+}
+
+p.lead.in {
+    margin: 17px 0px !important;
+}
+
+p.hero-note.in {
+    display: none;
+}
+
 /* ---------- progresso + nav ---------- */
 .progress {
   position: fixed;
@@ -321,13 +337,19 @@ p {
   .nav-links {
     display: none
   }
+  a.btn.ghost.magnetic {
+    margin: 10px 0px;
+}
 }
 
 @media (max-width:380px) {
   .nav-cta {
     padding: .65em .95em;
     font-size: .84rem
-  }
+  } 
+  a.btn.ghost.magnetic {
+    margin: 7px 0px;
+}
 }
 
 /* ---------- reveals ---------- */
@@ -2489,23 +2511,42 @@ p {
 /* ---------- WhatsApp + cursor ---------- */
 .wa {
   position: fixed;
-  right: calc(18px + env(safe-area-inset-right, 0px));
-  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-  z-index: 75;
+  right: calc(20px + env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 9999;
+
   width: 56px;
   height: 56px;
+
   border-radius: 50%;
-  background: var(--cobalt);
+  background: #25D366;
   color: #fff;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 16px 36px -12px rgba(69, 96, 255, .7);
-  transform: scale(0);
-  transition: transform .6s var(--ease)
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+
+  /* Sempre visível */
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.wa.show {
-  transform: scale(1)
+.wa:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+}
+
+.wa svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
 }
 
 .cursor,
